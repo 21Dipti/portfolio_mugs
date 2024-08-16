@@ -44,7 +44,7 @@ export default function Home() {
     <div className="container">
       <nav className="navbar">
         <div className="logo">
-          <Image src="logo.png" alt="Logo" />
+          <img src="logo.png" alt="Logo" />
         </div>
         <ul className="nav-links">
           <li><a href="#home">Home</a></li>
@@ -69,16 +69,16 @@ export default function Home() {
           <button className="hire-me-button">Hire Me</button>
         </div>
         <div className="home-image">
-          <Image src="Group 2.png" alt="Group 2" />
+          <img src="Group 2.png" alt="Group 2" />
         </div>
       </section>
 
       <section id="about" className="about-section">
-        <Image src="Group 7.png" alt="About Image" className="about-image" />
+        <img src="Group 7.png" alt="About Image" className="about-image" />
         <div className="about-text">
           <h2>About Me</h2>
           <p>Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra</p>
-          <Image src="skill_scroll.png" alt="Skills" className="skills-image" />
+          <img src="skill_scroll.png" alt="Skills" className="skills-image" />
         </div>
       </section>
 
@@ -90,22 +90,22 @@ export default function Home() {
         </div>
         <div className="services-cards">
           <div className="service-card">
-            <Image src="service1.png" alt="Service 1" />
+            <img src="service1.png" alt="Service 1" />
             <h3>UI/UX</h3>
             <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
           </div>
           <div className="service-card">
-            <Image src="service2.png" alt="Service 2" />
+            <img src="service2.png" alt="Service 2" />
             <h3>Web Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
           </div>
           <div className="service-card">
-            <Image src="service3.png" alt="Service 3" />
+            <img src="service3.png" alt="Service 3" />
             <h3>App Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
           </div>
           <div className="service-card">
-            <Image src="service4.png" alt="Service 4" />
+            <img src="service4.png" alt="Service 4" />
             <h3>Graphic Design</h3>
             <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
           </div>
@@ -128,9 +128,9 @@ export default function Home() {
           ))}
         </div>
         <div className='project-images'>
-          <Image src='web design1.png' alt="Web Design 1" />
-          <Image src='web design2.png' alt="Web Design 2" />
-          <Image src='web design3.png' alt="Web Design 3" />
+          <img src='web design1.png' alt="Web Design 1" />
+          <img src='web design2.png' alt="Web Design 2" />
+          <img src='web design3.png' alt="Web Design 3" />
         </div>
       </section>
       
@@ -143,7 +143,7 @@ export default function Home() {
           <div className="carousel" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slides.map((slide, index) => (
               <div key={index} className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}>
-                <Image src={slide.imgSrc} alt={`Slide ${index + 1}`} className="testimonial-image" />
+                <img src={slide.imgSrc} alt={`Slide ${index + 1}`} className="testimonial-image" />
                 <div className="testimonial-content">
                   <p className="testimonial-text">{slide.text}</p>
                   <p className="testimonial-name">{slide.name}</p>
@@ -163,6 +163,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section id="contact" className="contact-section">
         <h1>Let&apos;s Design Together</h1>
         <p>Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus</p>
@@ -177,7 +178,7 @@ export default function Home() {
       <section id="footer" className="footer-section">
         <div className="footer-content">
           <div className="footer-logo">
-            <Image src="logo.png" alt="Logo" />
+            <img src="logo.png" alt="Logo" />
           </div>
           <ul className="foot-links">
             <li><p>Home</p></li>
@@ -187,7 +188,7 @@ export default function Home() {
             <li><p>Testimonials</p></li>
             <li><p>Contact</p></li>
           </ul>
-          <Image src='footer_social_media.png' className='footer-social' />
+          <img src='footer_social_media.png' className='footer-social'></img>
         </div>
 
         <div className="footer-bottom">
