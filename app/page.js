@@ -1,113 +1,202 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      imgSrc: 'carousel_person1.png',
+      text: '"Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices."',
+      name: 'NAME',
+      designation: 'CEO',
+    },
+    {
+      imgSrc: 'carousel_person1.png',
+      text: '"Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices."',
+      name: 'Jane Smith',
+      designation: 'CEO',
+    },
+    {
+      imgSrc: 'carousel_person1.png',
+      text: '"Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices."',
+      name: 'Alice Johnson',
+      designation: 'CEO',
+    },
+    {
+      imgSrc: 'carousel_person1.png',
+      text: '"Lorem ipsum dolor sit amet consectetur. In enim cursus odio accumsan. Id leo urna velit neque mattis id tellus arcu condimentum. Augue dictum dolor elementum convallis dignissim malesuada commodo ultrices."',
+      name: 'Bob Brown',
+      designation: 'CEO',
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="container">
+      <nav className="navbar">
+        <div className="logo">
+          <img src="logo.png" alt="Logo" />
         </div>
-      </div>
+        <ul className="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div className="cv-button">
+          <a href="Resume_dipti.pdf" className="download-btn" download>Download CV</a>
+        </div>
+      </nav>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section id="home" className="home-section">
+        <div className="home-text">
+          <h4 className="small-heading">Hi I am</h4>
+          <h3 className="name-heading">Muhammad Umair</h3>
+          <h1 className='main-heading-1'>UI & UX</h1>
+          <h1 className='main-heading-2'>Designer</h1>
+          <p className="Nav bar text-21">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra</p>
+          <button className="hire-me-button">Hire Me</button>
+        </div>
+        <div className="home-image">
+          <img src="Group 2.png" alt="Group 2" />
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section id="about" className="about-section">
+        <img src="Group 7.png" alt="About Image" className="about-image" />
+        <div className="about-text">
+          <h2>About Me</h2>
+          <p>Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra</p>
+          <img src="skill_scroll.png" alt="Skills" className="skills-image" />
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <section id="services" className="services-section">
+        <div className='services-text'>
+          <h1>Services</h1>
+          <p>Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus</p>
+          <p>netus in. Aliquet donec morbi convallis pretium</p>
+        </div>
+        <div className="services-cards">
+          <div className="service-card">
+            <img src="service1.png" alt="Service 1" />
+            <h3>UI/UX</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
+          </div>
+          <div className="service-card">
+            <img src="service2.png" alt="Service 2" />
+            <h3>Web Design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
+          </div>
+          <div className="service-card">
+            <img src="service3.png" alt="Service 3" />
+            <h3>App Design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
+          </div>
+          <div className="service-card">
+            <img src="service4.png" alt="Service 4" />
+            <h3>Graphic Design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam interdum</p>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <section id="projects" className="projects-section">
+        <h1>My Projects</h1>
+        <p>Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris est risus</p>
+        <p>lectus. Phasellus consequat urna tellus</p>
+        <div className="filter-buttons">
+          {['All', 'UI/UX', 'Web Design', 'App Design', 'Graphic Design'].map(filter => (
+            <button
+              key={filter}
+              className={`filter-button ${activeFilter === filter ? 'active' : ''}`}
+              onClick={() => setActiveFilter(filter)}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+        <div className='project-images'>
+          <img src='web design1.png' alt="Web Design 1" />
+          <img src='web design2.png' alt="Web Design 2" />
+          <img src='web design3.png' alt="Web Design 3" />
+        </div>
+      </section>
+      
+      <section id="testimonials" className="testimonials-section">
+        <h1 className="testimonials-heading">Testimonials</h1>
+        <p className="testimonials-intro">Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus</p>
+        <p className="testimonials-intro">netus in. Aliquet donec morbi convallis pretium</p>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className="carousel-container">
+          <div className="carousel" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            {slides.map((slide, index) => (
+              <div key={index} className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}>
+                <img src={slide.imgSrc} alt={`Slide ${index + 1}`} className="testimonial-image" />
+                <div className="testimonial-content">
+                  <p className="testimonial-text">{slide.text}</p>
+                  <p className="testimonial-name">{slide.name}</p>
+                  <p className="testimonial-designation">{slide.designation}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="carousel-indicators">
+            {slides.map((_, index) => (
+              <span
+                key={index}
+                className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(index)}
+              ></span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact-section">
+        <h1>Let's Design Together</h1>
+        <p>Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus</p>
+        <p>netus in. Aliquet donec morbi convallis pretium</p>
+        
+        <div className="contact-form">
+          <input type="email" placeholder="Enter your email" className="email-input" />
+          <button className="contact-button">Contact Me</button>
+        </div>
+      </section>
+
+      <section id="footer" className="footer-section">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <img src="logo.png" alt="Logo" />
+          </div>
+          <ul className="foot-links">
+            <li><p>Home</p></li>
+            <li><p>About Me</p></li>
+            <li><p>Services</p></li>
+            <li><p>Projects</p></li>
+            <li><p>Testimonials</p></li>
+            <li><p>Contact</p></li>
+          </ul>
+          <img src='footer_social_media.png' className='footer-social'></img>
+        </div>
+
+        <div className="footer-bottom">
+          <p>© 2023 Mumair All Rights Reserved, Inc.</p>
+        </div>
+      </section>
+
+
+    </div>
   );
 }

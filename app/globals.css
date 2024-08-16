@@ -1,33 +1,590 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.container {
+  width: 100%;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Center everything horizontally */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+}
+
+.logo {
+  margin-right: 1rem;
+  width: 279px;
+  height: 67px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 31.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cv-button {
+  margin-left: 1rem;
+
+}
+
+.cv-button .download-btn {
+  padding: 0.5rem 1rem;
+  background-color: #FD6F00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.cv-button .download-btn:hover {
+  background-color: #e65b00;
+}
+
+.section {
+  padding: 6rem 2rem;
+  margin-top: 80px; /* To offset the fixed navbar */
+}
+
+h1, h3, h4, p {
+  margin: 0.5rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* Center everything vertically on smaller screens */
   }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .cv-button {
+    margin-top: 1rem;
+  }
+
+  .section {
+    padding: 4rem 1rem;
+  }
+}
+
+/* Container for home section */
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
+/* Container for text content */
+.home-text {
+  max-width: 50%;
+
+}
+
+/* Container for the image */
+.home-image {
+  max-width: 40%;
+  display: flex;
+  justify-content: center; /* Center image horizontally if needed */
+}
+
+/* Ensure image doesn't overflow */
+.home-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hire-me-button {
+  background-color: #FD6F00;
+  color: white;
+  border: none;
+  width: 188px;
+  height: 52px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px; /* Adds space between the text and button */
+  transition: background-color 0.3s ease;
+}
+
+.hire-me-button:hover {
+  background-color: #e65a00; /* Darkens the button on hover */
+}
+
+/* Styling for "Hi I am" text */
+.small-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for "Muhammad Umair" text */
+.name-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #FD6F00;
+  margin-bottom: 0.5rem;
+}
+/*styling for home text*/
+.Nav bar text-21{
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+  letter-spacing: 0.03em;
+  text-align: justify;
+  color: #000;
+}
+/*UI & UX*/
+.main-heading-1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 120px;
+  letter-spacing: 0.03em;
+  text-align: left;
+
+}
+.main-heading-2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 120px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  margin-left: 30%;
+
+}
+
+/* Styling for the About Me section */
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem; /* Adjust spacing between the left and right sections */
+  padding: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.about-section img.about-image {
+  max-width: 50%; /* Ensure the image on the left doesn't take up too much space */
+  height: auto;
+}
+
+.about-text {
+  max-width: 50%; /* Ensure the text and second image are on the right side */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-text h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 97.5px;
+  letter-spacing: 0.03em;
+  color: #000000; 
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-text img.skills-image {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem; /* Adjust the margin to control spacing between the paragraph and the image */
+  margin-right: 10%;
+}
+
+
+/* Styling for the Services section */
+.services-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 65px;
+  text-align: center;
+  line-height: 97.5px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.services-text p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 31.5px;
+  text-align: center;
+  
+}
+
+/* Grid layout for the service cards */
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 2rem;
+  margin-top: 3%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.service-card {
+  background-color: #F8F8F8;
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: left;
+  height: 300px;
+  width: 85%;
+}
+
+.service-card img {
+  max-width: 50px; 
+  height: 70px;
+  width: 70px;
+  margin-bottom: 1rem;
+  margin-top: 10%;
+}
+
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 11%;
+}
+
+
+/* Styling for the Projects section */
+.projects-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.projects-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 97.5px;
+  margin-bottom: 1rem;
+}
+
+.projects-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px;
+  line-height: 31.5px;
+}
+.project-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.project-images img {
+  width: calc(33.333% - 10px); /* Adjust width calculation to fit perfectly */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling on the whole page */
+}
+
+
+/* Styling for the filter buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  background-color: #F8F8F8;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: #FD6F00;
+  color: white;
+}
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 80%; 
+  margin: 0 auto; 
+  margin-top: 10%;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%; /* Each slide takes 100% of the container width */
+  height: 344px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #F8F8F8;
+  border-radius: 14px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0.3; /* Faded appearance for non-active slides */
+  transform: scale(0.9); /* Slightly smaller size for non-active slides */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  margin: 0 10px; /* Add spacing between slides */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-slide img.testimonial-image {
+  max-width: 150px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonials-heading{
+  text-align: center;
+  line-height: 97.5px;
+  font-size: 65px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonials-intro{
+  text-align: center;
+  font-size: 21px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-text {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+}
+
+.testimonial-designation {
+  color: gray;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.carousel-indicators .indicator {
+  width: 57px;
+  height: 16px;
+  margin: 0 5px;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicators .indicator.active {
+  background-color: #FD6F00;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-section h1{
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 97.5px;
+
+}
+.contact-section p {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.email-input {
+  padding: 10px;
+  background-color: #F8F8F8;
+  font-size: 21px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  margin-right: 10px;
+  width: 527px;
+  height: 30px;
+}
+
+.contact-button {
+  padding: 13px 20px;
+  font-size: 21px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FD6F00; /* Use your desired button color */
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #e05b00; /* Slightly darker shade for hover effect */
+}
+
+.footer-section {
+  background-color: #F8F8F8;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 279px; /* Adjust size of the logo */
+  height: 67px;
+  margin-top: 10%;
+}
+
+.foot-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.foot-links li {
+  margin: 0 15px;
+  margin-top: 5%; 
+  padding: 10px 14px 10px 14px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+  font-family: 'Poppins',sans-serif;
+}
+
+.foot-links p {
+  margin: 0;
+}
+
+.footer-social{
+  margin-top: 5%; 
+  width: 205px;
+  height: 32.48px;
+}
+
+.footer-bottom {
+  background-color: #545454;
+  margin-top: 10%;
+}
+
+.footer-bottom p {
+  color: #FFFFFF;
+  margin: 0;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+  font-family: 'Poppins',sans-serif;
+
 }
